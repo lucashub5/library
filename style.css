@@ -1,0 +1,196 @@
+:root.light {
+    --base-background: white;
+    --base-color: black;
+    --borders: 1px solid rgb(208, 162, 247);
+    --filter-img: invert(1);
+}
+
+:root.dark {
+    --base-background: black;
+    --base-color: white;
+    --borders: 1px solid rgb(83, 65, 99);
+    --filter-img: invert(0);
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('Roboto-Light.ttf');
+    font-weight: 300;
+}
+
+* {
+    margin: 0;
+    font-family: 'roboto';
+    color: var(--base-color);
+}
+
+body {
+    background: rgb(241, 234, 255);
+}
+
+main {
+    min-height: 100vh;
+    height: 100%;
+    background: var(--base-background);
+    margin: 0 10% 0 10%;
+    display: grid;
+    grid-template-rows: 100px 1fr 40px;
+    padding: 0 30px 0 30px;
+}
+
+header {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-template-rows: 1fr;
+}
+
+header p {
+    grid-row: 2; 
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding: 0px;
+}
+
+input {
+    background: none;
+}
+
+.reference {
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    grid-template-columns: 3fr 3fr 1.2fr 1.5fr 1fr;
+    padding-top: 30px;
+    align-self: flex-start;
+}
+
+.about {
+    border-bottom: var(--borders); 
+    display: flex;
+    align-items: center;
+}
+
+.book, .add-book {
+    height: 60px;
+    border-bottom: var(--borders);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 300;
+}
+
+.read-status {
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    background: rgb(225, 236, 200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: black !important;
+}
+
+.read-status:active {
+    background: rgb(178, 200, 186);
+}
+
+.add-book {
+    border: none;
+    justify-content: center;
+    grid-column: 5;
+}
+
+.new-book {
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: var(--borders);
+    margin: 20px 0 20px 0;
+    font-size: 16px;
+    padding-left: 15px;
+    border-bottom: var(--borders);
+    box-sizing: border-box;
+}
+
+.new-book:focus {
+    border: var(--borders);
+    outline: none;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnClearStyle {
+    background: none;
+    border: none;
+}
+
+.form-container {
+    grid-column: 1 / 6;
+    display: grid;
+    grid-template-columns: 3fr 3fr 1.2fr 1.5fr 1fr;
+}
+
+button {
+    all: unset;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+
+    header {
+        padding-top: 10px;
+        font-size: 13px;
+    }
+
+    main {
+        margin: 0;
+        grid-template-rows: 100px 1fr 40px;
+        padding: 0 10px 0 10px;
+    }
+
+    .reference {
+        font-size: 12px;
+        grid-template-columns: 2.5fr 2.5fr 1.2fr 0.8fr 1fr;
+    }
+
+    .form-container {
+        grid-template-columns: 2.5fr 2.5fr 1.2fr 0.8fr 1fr;
+    }
+
+    .book, .add-book {
+        height: 40px;
+    }
+
+    .read-status {
+        width: 60px;
+    }
+
+    .new-book {
+        width: 95%;
+        margin: 0px;
+        font-size: 16px;
+        padding-left: 5px;
+    }
+
+}
